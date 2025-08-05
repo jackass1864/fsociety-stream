@@ -4,7 +4,7 @@ const cheerio = require("cheerio");
 module.exports = async (req, res) => {
   const { url } = req.query;
 
-  if (!url || !url.startsWith("https://vidsrc.in/embed/")) {
+  if (!url || !url.startsWith("https://vidsrc.me/embed/")) {
     return res.status(400).send("Invalid or missing URL");
   }
 
@@ -57,4 +57,5 @@ module.exports = async (req, res) => {
     console.error("Proxy error:", error.message);
     res.status(500).send("Error processing URL.");
   }
+
 };
